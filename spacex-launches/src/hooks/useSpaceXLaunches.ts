@@ -37,7 +37,7 @@ export function useSpaceXLaunches() {
       dispatch({ type: "FETCH_START" });
 
       try {
-        console.log("Fetching launches...");
+        await new Promise((resolve) => setTimeout(resolve, 3000));
         const response = await fetch(
           "https://api.spacexdata.com/v3/launches?launch_year=2020"
         );
